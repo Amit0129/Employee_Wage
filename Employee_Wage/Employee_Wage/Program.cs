@@ -6,16 +6,20 @@
         public const int Part_Time = 2;
         public const int EmpRatePerHour = 20;
         public const int NumOfWorkDay = 20;
+        public const int MaxHourInMonth = 100;
         static void Main(string[] args)
         {
             Console.WriteLine("Employ Wage Calculation");
 
-            int empHrs = 0;
-            int empWage = 0;
-            int totalEmpWage = 0;
+            //int empHrs = 0;
+            //int empWage = 0;
+            //int totalEmpWage = 0;
 
-            for (int day = 0; day < NumOfWorkDay; day++)
+            int empHrs = 0, totalEmpHrs = 0, totalWorkDay = 0;
+
+            while (totalEmpHrs <= MaxHourInMonth && totalWorkDay < NumOfWorkDay)
             {
+                totalWorkDay++;
                 Random random = new Random();
                 int empCheck = random.Next(0, 3);
 
@@ -31,10 +35,12 @@
                         empHrs = 0;
                         break;
                 }
-                empWage = empHrs * EmpRatePerHour;
-                totalEmpWage += empWage;
+                totalEmpHrs += empHrs;
+                Console.WriteLine("Day" + totalWorkDay + "Employee Hour" + empHrs);
             }
+            int totalEmpWage = totalEmpHrs * EmpRatePerHour;
             Console.WriteLine("Total Employ Wage is : " + totalEmpWage);
+
         }
     }
 }
