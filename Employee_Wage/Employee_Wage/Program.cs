@@ -9,6 +9,7 @@
         {
             Console.WriteLine("Employ Wage Calculation");
 
+
             int empHrs = 0;
             int empWage = 0;
 
@@ -17,17 +18,17 @@
             int empCheck = random.Next(0, 3);
 
 
-            if (empCheck == Full_Time)
+            switch (empCheck)
             {
-                empHrs = 8;
-            }
-            else if (empCheck == Part_Time)
-            {
-                empHrs = 4;
-            }
-            else
-            {
-                empHrs = 0;
+                case Full_Time:
+                    empHrs = 8;
+                    break;
+                case Part_Time:
+                    empHrs = 4;
+                    break;
+                default:
+                    empHrs = 0;
+                    break;
             }
             empWage = empHrs * EmpRatePerHour;
             Console.WriteLine("Employ Wage is : " + empWage);
