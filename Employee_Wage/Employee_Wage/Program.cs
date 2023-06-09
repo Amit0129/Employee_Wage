@@ -3,19 +3,27 @@
     internal class Program
     {
         public const int Full_Time = 1;
+
+        public const int EmpRatePerHour = 20;
         static void Main(string[] args)
         {
             Console.WriteLine("Employ Wage Calculation");
+            int empHrs = 0;
+            int empWage = 0;
+
             Random random = new Random();
             int empCheck = random.Next(0, 2);
+
             if (empCheck == Full_Time)
             {
-                Console.WriteLine("Employee is present");
+                empHrs = 8;
             }
             else
             {
-                Console.WriteLine("Employee is absent");
+                empHrs = 0;
             }
+            empWage = empHrs * EmpRatePerHour;
+            Console.WriteLine("Employ Wage is : " + empWage);
         }
     }
 }
