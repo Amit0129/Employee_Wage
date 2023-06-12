@@ -7,13 +7,10 @@
         public const int EmpRatePerHour = 20;
         public const int NumOfWorkDay = 20;
         public const int MaxHourInMonth = 100;
-        static void Main(string[] args)
+
+        public static int computeEmpWage()
         {
             Console.WriteLine("Employ Wage Calculation");
-
-            //int empHrs = 0;
-            //int empWage = 0;
-            //int totalEmpWage = 0;
 
             int empHrs = 0, totalEmpHrs = 0, totalWorkDay = 0;
 
@@ -40,7 +37,12 @@
             }
             int totalEmpWage = totalEmpHrs * EmpRatePerHour;
             Console.WriteLine("Total Employ Wage is : " + totalEmpWage);
-
+            return totalEmpWage;
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Employ Wage Calculation");
+            computeEmpWage();
         }
     }
 }
